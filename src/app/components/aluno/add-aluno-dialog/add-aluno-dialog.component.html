@@ -1,0 +1,14 @@
+<h1 mat-dialog-title>Adicionar aluno</h1>
+<div mat-dialog-content>
+
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Nome</mat-label>
+    <input name="nome" autoComplete="off" matInput [(ngModel)]="data.name" type="text"
+      (keypress)="onKeyPress($event)" />
+  </mat-form-field>
+
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">Cancelar</button>
+  <button mat-button [mat-dialog-close]="data.name" [disabled]="!data.name.length" (click)="add()">Adicionar</button>
+</div>

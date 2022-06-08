@@ -1,0 +1,15 @@
+<h2 mat-dialog-title>Editar Aluno</h2>
+<div mat-dialog-content>
+
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Novo nome</mat-label>
+    <input name="nome" autoComplete="off" (change)="cleanError()" matInput [(ngModel)]="name" type="text"
+      (keypress)="onKeyPress($event)" />
+  </mat-form-field>
+
+  <p class="error" *ngIf="error">{{error}}</p>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">Cancelar</button>
+  <button mat-button [disabled]="!name.length" (click)="update()">Editar</button>
+</div>

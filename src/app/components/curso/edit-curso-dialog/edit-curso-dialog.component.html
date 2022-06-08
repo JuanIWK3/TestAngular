@@ -1,0 +1,24 @@
+<div class="container">
+  <h2 mat-dialog-title>Editar Curso</h2>
+  <div mat-dialog-content>
+
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Nova descricao</mat-label>
+      <input name="nome" autoComplete="off" (change)="cleanError()" matInput [(ngModel)]="descricao" type="text"
+        (keypress)="onKeyPress($event)" />
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Nova emenda</mat-label>
+      <textarea name="nome" autoComplete="off" (change)="cleanError()" matInput [(ngModel)]="emenda" type="text"
+        (keypress)="onKeyPress($event)">
+  </textarea>
+    </mat-form-field>
+
+    <p class="error" *ngIf="error">{{error}}</p>
+  </div>
+  <div mat-dialog-actions>
+    <button mat-button (click)="onNoClick()">Cancelar</button>
+    <button mat-button [disabled]="!descricao.length || !emenda.length" (click)="update()">Editar</button>
+  </div>
+</div>

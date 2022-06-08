@@ -1,0 +1,63 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+main {
+  width: 100%;
+  max-width: 600px;
+
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+
+    input {
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      padding: 10px;
+      min-width: none;
+      width: 100%;
+
+      &:focus {
+        outline: none;
+      }
+    }
+
+    button {
+      margin-left: 8px;
+      min-width: max-content;
+    }
+  }
+
+  .aluno {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    p {
+      padding: 8px;
+      margin: 0;
+    }
+
+    .options {
+      button {
+        padding: 0;
+        width: 10px;
+
+        mat-icon {
+          font-size: 18px;
+
+          &.delete {
+            color: red;
+          }
+        }
+      }
+    }
+  }
+}

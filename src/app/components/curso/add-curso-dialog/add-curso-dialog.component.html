@@ -1,0 +1,22 @@
+<h1 mat-dialog-title>Adicionar Curso</h1>
+<div mat-dialog-content>
+
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Descricao</mat-label>
+    <input name="nome" autoComplete="off" matInput [(ngModel)]="data.descricao" type="text"
+      (keypress)="onKeyPress($event)" />
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Emenda</mat-label>
+    <textarea name="nome" autoComplete="off" matInput [(ngModel)]="data.emenda" type="text"
+      (keypress)="onKeyPress($event)">
+    </textarea>
+  </mat-form-field>
+
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">Cancelar</button>
+  <button mat-button [mat-dialog-close]="data.descricao" [disabled]="!data.descricao.length || !data.emenda.length"
+    (click)="add()">Adicionar</button>
+</div>

@@ -1,0 +1,27 @@
+<div class="container">
+  <h1><strong>Cursos</strong></h1>
+  <main>
+    <div class="header">
+      <input type="text" placeholder="Pesquisar..." [(ngModel)]="search">
+      <button mat-raised-button (click)="openAddDialog()">Adicionar</button>
+    </div>
+    <div class="curso" *ngFor="let curso of cursos | async">
+      <div class="content">
+        <p><strong>{{curso.descricao}}</strong></p>
+        <p>{{curso.emenda}}</p>
+      </div>
+      <div class="options">
+        <a [routerLink]="['/' + curso.codigo]"></a>
+        <button mat-button matTooltip="Página do curso" matTooltipPosition="right">
+          <mat-icon class="page" aria-hidden="false" aria-label="editar">pageview</mat-icon>
+        </button>
+        <button mat-button matTooltip="Editar curso" matTooltipPosition="right" (click)="openEditDialog(curso)">
+          <mat-icon aria-hidden="false" aria-label="editar">edit</mat-icon>
+        </button>
+        <button mat-button matTooltip="Deletar curso" matTooltipPosition="right" (click)="delete(curso)">
+          <mat-icon class="delete" aria-hidden="false" aria-label="deletar">delete</mat-icon>
+        </button>
+      </div>
+    </div>
+  </main>
+</div>

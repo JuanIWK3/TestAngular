@@ -1,0 +1,20 @@
+<div class="container">
+  <h1>Alunos</h1>
+  <main>
+    <div class="header">
+      <input type="text" placeholder="Pesquisar..." [(ngModel)]="search">
+      <button mat-raised-button (click)="openAddDialog()">Adicionar</button>
+    </div>
+    <div class="aluno" *ngFor="let aluno of alunos | async">
+      <p>{{aluno.nome}}</p>
+      <div class="options">
+        <button matTooltip="Editar aluno" mat-button (click)="openEditDialog(aluno)">
+          <mat-icon aria-hidden="false" aria-label="editar">edit</mat-icon>
+        </button>
+        <button matTooltip="Deletar aluno" mat-button (click)="delete(aluno)">
+          <mat-icon class="delete" aria-hidden="false" aria-label="deletar">delete</mat-icon>
+        </button>
+      </div>
+    </div>
+  </main>
+</div>
