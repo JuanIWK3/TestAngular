@@ -8,10 +8,10 @@
     <div class="aluno" *ngFor="let aluno of alunos | async">
       <p>{{aluno.nome}}</p>
       <div class="options">
-        <button matTooltip="Editar aluno" mat-button (click)="openEditDialog(aluno)">
+        <button mat-button matTooltip="Editar aluno" matTooltipPosition="left" (click)="openEditDialog(aluno)">
           <mat-icon aria-hidden="false" aria-label="editar">edit</mat-icon>
         </button>
-        <button matTooltip="Deletar aluno" mat-button (click)="delete(aluno)">
+        <button mat-button matTooltip="Deletar aluno" matTooltipPosition="right" (click)="delete(aluno)">
           <mat-icon class="delete" aria-hidden="false" aria-label="deletar">delete</mat-icon>
         </button>
       </div>
