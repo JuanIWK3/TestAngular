@@ -7,12 +7,23 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: #fafafa;
+}
+
+.logo-icon {
+  animation: float 1s ease-in-out;
+  width: max-content;
+  height: 300px;
+  font-size: 300px;
+  color: #3f51b5;
 }
 
 .buttons {
+  animation: fadeIn 1.5s ease-in-out;
+
   button {
+    padding: 8px 16px;
     margin: 4px;
+    font-size: 1.5rem;
 
     &:hover {
       color: #fafafa;
@@ -21,9 +32,22 @@
   }
 }
 
-mat-icon {
-  width: max-content;
-  height: 200px;
-  font-size: 200px;
-  color: #3f51b5;
+@keyframes float {
+  0% {
+    transform: translateX(-60vw);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
 }

@@ -1,0 +1,12 @@
+<h1 mat-dialog-title>Adicionar Aluno</h1>
+<div mat-dialog-content>
+  <div *ngIf="!alunos.length">
+    Não há alunos sem curso
+  </div>
+  <div *ngFor="let aluno of alunos">
+    <button mat-button (click)="addAluno(aluno.codigo!)">{{aluno.nome}}</button>
+  </div>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">Cancelar</button>
+</div>

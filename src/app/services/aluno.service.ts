@@ -12,8 +12,11 @@ export class AlunoService {
   constructor(private http: HttpClient) {}
 
   getAlunos(): Observable<Aluno[]> {
-    const alunos = this.http.get<Aluno[]>(this.url + '/all');
-    return alunos;
+    return this.http.get<Aluno[]>(this.url + '/all');
+  }
+
+  getAlunosSemCurso() {
+    return this.http.get<Aluno[]>(this.url + '/all-sem-curso');
   }
 
   getAluno(id: number): Observable<Aluno> {
@@ -25,7 +28,6 @@ export class AlunoService {
   }
 
   updateAluno(aluno: Aluno): Observable<Aluno> {
-    console.log('updateAluno', aluno);
     return this.http.put<Aluno>(this.url + '/update/' + aluno.codigo, {
       nome: aluno.nome,
     });

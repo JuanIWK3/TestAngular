@@ -11,10 +11,11 @@
         <p>{{curso.emenda}}</p>
       </div>
       <div class="options">
-        <a [routerLink]="['/' + curso.codigo]"></a>
-        <button mat-button matTooltip="Página do curso" matTooltipPosition="right">
-          <mat-icon class="page" aria-hidden="false" aria-label="editar">pageview</mat-icon>
-        </button>
+        <a [routerLink]="[curso.codigo]">
+          <button mat-button matTooltip="Página do curso" matTooltipPosition="right">
+            <mat-icon class="page" aria-hidden="false" aria-label="editar">pageview</mat-icon>
+          </button>
+        </a>
         <button mat-button matTooltip="Editar curso" matTooltipPosition="right" (click)="openEditDialog(curso)">
           <mat-icon aria-hidden="false" aria-label="editar">edit</mat-icon>
         </button>

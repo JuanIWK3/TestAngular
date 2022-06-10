@@ -1,6 +1,8 @@
+import { AlunoOnCurso } from './../interfaces/index';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { Aluno } from '../models/aluno';
 import { Curso } from '../models/curso';
 
 @Injectable({
@@ -15,8 +17,8 @@ export class CursoService {
     return this.http.get<Curso[]>(this.url + '/all');
   }
 
-  getCurso(id: number): Observable<Curso> {
-    return this.http.get<Curso>(this.url + '/' + id);
+  getCurso(codigo: string): Observable<Curso> {
+    return this.http.get<Curso>(this.url + '/' + codigo);
   }
 
   addCurso(descricao: string, emenda: string): Observable<Curso> {
@@ -33,5 +35,23 @@ export class CursoService {
 
   deleteCurso(codigo: string): Observable<Curso> {
     return this.http.delete<Curso>(this.url + '/delete/' + codigo);
+  }
+
+  addAluno(codigo: string, codAluno: string): Observable<Curso> {
+    console.log({ codigo, codAluno });
+
+    return this.http.put<Curso>(this.url + '/add-teste/' + codigo, {
+      codAluno,
+    });
+  }
+
+  getAlunos(codigoCurso: string): Observable<AlunoOnCurso[]> {
+    return this.http.get<AlunoOnCurso[]>(this.url + '/alunos/' + codigoCurso);
+  }
+
+  removeAluno(codigo: string) {
+    return this.http.delete<Curso>(this.url + '/remove-aluno/', {
+      body: { codigo },
+    });
   }
 }

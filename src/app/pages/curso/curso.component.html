@@ -1,1 +1,19 @@
-<p>curso works!</p>
+<div *ngIf="curso" class="container">
+  <div class="curso">
+    <p><strong>{{curso.descricao}}</strong></p>
+    <p>{{curso.emenda}}</p>
+  </div>
+
+  <div class="alunos">
+    <h2>Alunos</h2>
+    <button mat-raised-button (click)="openAddDialog()">Adicionar</button>
+    <ul>
+      <li *ngFor="let aluno of alunos">
+        {{aluno.aluno.nome}}
+        <button mat-button matTooltip="Remover aluno" matTooltipPosition="right" (click)="removeAluno(aluno.codigo!)">
+          <mat-icon class="delete" aria-hidden="false" aria-label="deletar">delete</mat-icon>
+        </button>
+      </li>
+    </ul>
+  </div>
+</div>

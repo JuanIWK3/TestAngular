@@ -25,6 +25,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { CursoComponent } from './pages/curso/curso.component';
+import { AddAlunoOnCursoDialogComponent } from './components/curso/add-aluno-on-curso-dialog/add-aluno-on-curso-dialog.component';
 
 const materialModules = [
   MatDialogModule,
@@ -47,7 +48,7 @@ const components = [
 ];
 
 @NgModule({
-  declarations: [...components, CursoComponent],
+  declarations: [...components, CursoComponent, AddAlunoOnCursoDialogComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

@@ -12,13 +12,13 @@ export class AddCursoDialogComponent implements OnInit {
   constructor(
     public dialogRef: MatDialogRef<AddCursoDialogComponent>,
     @Inject(MAT_DIALOG_DATA) public data: CursoDialogData,
-    private alunoService: CursoService
+    private cursoService: CursoService
   ) {}
 
   ngOnInit(): void {}
 
   add(): void {
-    this.alunoService
+    this.cursoService
       .addCurso(this.data.descricao, this.data.emenda)
       .subscribe(() => {
         this.onNoClick();
